@@ -1,4 +1,4 @@
-# Ứng dụng nhà hàng
+# Ứng dụng trang đọc báo
 
 ## Deployment and/or CI/CD
 use laradoc module: https://laradock.io/
