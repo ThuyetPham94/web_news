@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterGameContectTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AlterGameContectTable extends Migration
      */
     public function up()
     {
-        Schema::table('game_contect', function (Blueprint $table) {
-           $table->unsignedInteger('level_id');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -25,7 +26,6 @@ class AlterGameContectTable extends Migration
      */
     public function down()
     {
-        Schema::table('game_contect', function (Blueprint $table) {
-        });
+        Schema::dropIfExists('categories');
     }
 }

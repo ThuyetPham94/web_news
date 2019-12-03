@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGameContextTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateGameContextTable extends Migration
      */
     public function up()
     {
-        Schema::create('game_contect', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_vi');
-            $table->string('name_en');
-            $table->string('photo');
-            $table->json('photo_options');
-            $table->json('children_options')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateGameContextTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_contect');
+        Schema::dropIfExists('tags');
     }
 }
