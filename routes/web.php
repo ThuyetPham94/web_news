@@ -10,9 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'LaravueController@index')->where('any', '.*');
+Route::get('/admin', 'LaravueController@index')->where('any', '.*');
 
 Route::get('success', ['as'=>'active.success', 'uses'=>'LaravueController@success']);
 
 Route::get('forgot', ['as'=>'forgotpassword', 'uses'=>'LaravueController@forgotPassword']);
 Route::post('forgot', ['as'=>'forgotpassword.post', 'uses'=>'LaravueController@forgotPassword']);
+
+Route::get('/', function () {
+    return view('frontend.function.index');
+});

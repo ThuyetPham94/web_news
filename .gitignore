@@ -1,5 +1,4 @@
 /tests
-/storage/logs
 .env
 /vendor
 /node_modules
