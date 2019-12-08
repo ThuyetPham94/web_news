@@ -3,13 +3,13 @@
 namespace App\Http\Services;
 
 use App\Http\Services\BaseService as Base;
-use App\Models\Game;
+use App\Models\Tag;
 
-class GameService extends Base
+class TagService extends Base
 {
     public $model;
 
-    public function __construct(Game $model)
+    public function __construct(Tag $model)
     {
         $this->model = $model;
     }

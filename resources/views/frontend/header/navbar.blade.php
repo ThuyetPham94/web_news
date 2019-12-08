@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ env('APP_URL') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link features" href="#">Features <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -143,82 +143,6 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link sport" href="#">Sport <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <div class="mega-posts-menu">
-                        <div class="posts-line">
-                            <ul class="filter-list">
-                                <li><a href="#">All</a></li>
-                                <li><a href="#">Football</a></li>
-                                <li><a href="#">Basketball</a></li>
-                                <li><a href="#">Teniss</a></li>
-                                <li><a href="#">Winter sports</a></li>
-                            </ul>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s30.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-sport">Tennis</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s31.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-sport">Football</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s32.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-sport">winter sports</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s29.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-sport">Basketball</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link tech" href="#">Tech <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     <div class="mega-posts-menu">
                         <div class="posts-line">
@@ -238,51 +162,6 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s38.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-tech">Tech</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s39.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-tech">Tech</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="news-post standart-post">
-                                        <div class="post-image">
-                                            <a href="single-post-2.html">
-                                                <img src="upload/blog/s2.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="category category-tech">Tech</a>
-                                        </div>
-                                        <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                            <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -292,29 +171,6 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link travel" href="#">Travel <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                </li>
-                <li class="nav-item drop-link">
-                    <a class="nav-link food" href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="forums.html">Forum Pages <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            <ul class="dropdown level2">
-                                <li><a href="forums.html">Forum</a></li>
-                                <li><a href="forums-category.html">Topics</a></li>
-                                <li><a href="forum-topic.html">Single Topic</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="author-list.html">Authors List</a></li>
-                        <li><a href="author-details.html">Author Details</a></li>
-                        <li><a href="archive.html">Archive Page</a></li>
-                        <li><a href="tag.html">Tags Page</a></li>
-                        <li><a href="search.html">Search Page</a></li>
-                        <li><a href="register.html">Register Page</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="404-error.html">404 Error</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="underconstruction.html" target="_blank">Underconstruction</a></li>
-                    </ul>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

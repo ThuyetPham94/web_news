@@ -3,13 +3,13 @@
 namespace App\Http\Services;
 
 use App\Http\Services\BaseService as Base;
-use App\Models\Topic;
+use App\Models\Category;
 
-class TopicService extends Base
+class CategoryService extends Base
 {
     public $model;
 
-    public function __construct(Topic $model)
+    public function __construct(Category $model)
     {
         $this->model = $model;
     }
