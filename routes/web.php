@@ -17,6 +17,4 @@ Route::get('success', ['as'=>'active.success', 'uses'=>'LaravueController@succes
 Route::get('forgot', ['as'=>'forgotpassword', 'uses'=>'LaravueController@forgotPassword']);
 Route::post('forgot', ['as'=>'forgotpassword.post', 'uses'=>'LaravueController@forgotPassword']);
 
-Route::get('/', function () {
-    return view('frontend.function.index');
-});
+Route::get('/', ['as'=>'home', 'uses'=>'Web\\HomeController@index']);

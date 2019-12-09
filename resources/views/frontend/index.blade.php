@@ -5,12 +5,7 @@
 
 <!-- Mirrored from nunforest.com/minberi-mag/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Dec 2019 05:41:49 GMT -->
 <head>
-	<title>MinberiMAG</title>
-
-	<meta charset="utf-8">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	@include('frontend.header.head')
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CRoboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet">
 
 	@include('frontend.css.index')

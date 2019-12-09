@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Models\Category;
+use App\Models\Tag;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +19,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        View::share('categories', Category::all());
+        View::share('categories', Category::with(['subCategories'])->get());
+        View::share('tags_nav', Tag::all());
     }
 
     /**

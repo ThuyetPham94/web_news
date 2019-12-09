@@ -11,11 +11,15 @@ class HomeController extends Controller
     private $articleService;
     function __construct(ArticleService $articleService)
     {
-        $this->$articleService = $articleService;
+        $this->articleService = $articleService;
     }
 
     function index()
     {
-        
+        return view('frontend.function.index', [
+            'title' => 'web bao',
+            'description' => 'news',
+            'keywords' => 'web bao'
+        ]);
     }
 }

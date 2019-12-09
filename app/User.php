@@ -87,4 +87,9 @@ class User extends Authenticatable implements JWTSubject
     public function checkPermission($type) {
         return $this->type === $type;
     }
+
+    public function articles()
+    {
+        return $this->hasMany('App\Models\Article');
+    }
 }

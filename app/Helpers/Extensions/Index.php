@@ -2,7 +2,8 @@
 
 namespace App\Helpers\Extensions;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Article;
+use Illuminate\Support\Carbon;
 /**
  * MyClass Class Index Comment
  *
@@ -19,10 +20,15 @@ class Index
      *
      * @return string
      */
-    public static function getUserName($user_id)
+    public static function getArticleByCategory($type, $category_id = 0)
     {
-        $user = DB::table('users')->where('userid', $user_id)->first();
-
-        return (isset($user->username) ? $user->username : '');
+        $articles = collect([]);
+        if ($type === 'nav') {
+            $articles = Article::with(['user'])->where('category_id', $category_id)->orderBy('updated_at', 'desc')->take(4)->get();
+        }
+        if ($type === 'weekly') {
+            $articles = Article::whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->orderBy('views', 'desc')->take(12)->get();
+        }
+        return $articles;
     }
 }

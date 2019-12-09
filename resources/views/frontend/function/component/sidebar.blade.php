@@ -1,5 +1,5 @@
 <div class="col-lg-4 sidebar-sticky">
-                
+
     <!-- Sidebar -->
     <div class="sidebar theiaStickySidebar">
         <div class="search-widget widget">
@@ -317,23 +317,9 @@
         <div class="widget tags-widget">
             <h1>Tags</h1>
             <ul class="tags-list">
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">World</a></li>
-                <li><a href="#">Politic</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Tech</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Economy</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Photos</a></li>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Traditional</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Future</a></li>
-                <li><a href="#">Culture</a></li>
+                @foreach ($tags_nav as $item)
+                <li><a href="#">{{ $item->name }}</a></li>
+                @endforeach
             </ul>
         </div>
 
