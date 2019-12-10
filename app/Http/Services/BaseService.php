@@ -12,9 +12,9 @@ class BaseService
         return $this->basePagination($request);
     }
 
-    public function getAll()
+    public function getAll($with = array())
     {
-        return $this->model->all();
+        return $this->model->with($with)->get();
     }
 
     public function store($request)
