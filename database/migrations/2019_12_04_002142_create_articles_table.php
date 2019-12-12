@@ -23,6 +23,7 @@ class CreateArticlesTable extends Migration
             $table->string('sort_content');
             $table->string('photo');
             $table->integer('views');
+            $table->integer('top')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('sub_category_id');

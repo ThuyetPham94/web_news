@@ -10,11 +10,14 @@
                     <a class="nav-link" href="{{ env('APP_URL') }}">Home</a>
                 </li>
                 @foreach ($categories as $item)
+                <?php
+                $articles = Helper::getArticleByCategory('nav', $item->id);
+                ?>
                 <li class="nav-item">
-                    <a class="nav-link world" href="#">{{ $item->name }} @if (count(Helper::getArticleByCategory($item->id)))
+                    <a class="nav-link world" href="#">{{ $item->name }} @if (count($articles))
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     @endif</a>
-                    @if (count(Helper::getArticleByCategory($item->id)))
+                    @if (count($articles))
                     <div class="mega-posts-menu">
                         <div class="posts-line">
                             @if (count($item->subCategories))
@@ -26,7 +29,7 @@
                             </ul>
                             @endif
                             <div class="row">
-                                @foreach (Helper::getArticleByCategory($item->id) as $article)
+                                @foreach ($articles as $article)
                                 <div class="col-lg-3 col-md-6">
                                     <div class="news-post standart-post">
                                         <div class="post-image">

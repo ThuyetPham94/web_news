@@ -2,316 +2,115 @@
 @section('content')
 <!-- wide-news-heading
     ================================================== -->
-<div class="wide-news-heading container">
+<div class="wide-news-heading">
 
     <div class="item main-news">
 
         <div class="flexslider">
             <ul class="slides">
+                @foreach ($sidebar_articles->take(3)->all() as $item)
                 <li>
                     <div class="news-post large-image-post">
-                        <img src="upload/blog/lg1.jpg" alt="">
+                        <img src="{{ asset($item->photo) }}" alt="{{ $item->name }}">
                         <div class="hover-box">
-                            <a href="#" class="category category">Politic</a>
-                            <h2><a href="single-post.html">Syrian crise, violence, refugees ...</a></h2>
+                            @if ($item->subCategory)
+                            <a href="#" class="category" style="background: {{ $item->subCategory->color }}">{{ $item->subCategory->name }}</a>
+                            @else
+                            <a href="#" class="category" style="background: {{ $item->category->color }}">{{ $item->category->name }}</a>
+                            @endif
+                            <h2><a href="single-post.html">{{ $item->name }} ...</a></h2>
                             <ul class="post-tags">
-                                <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
+                                <li><i class="lnr lnr-user"></i>Tác giả: <a href="#">{{ $item->user->name }}</a></li>
+                                {{-- <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li> --}}
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="news-post large-image-post">
-                        <img src="upload/blog/lg2.jpg" alt="">
-                        <div class="hover-box">
-                            <a href="#" class="category category-world">World</a>
-                            <h2><a href="single-post.html">More than one hundred thousand people evacuated in Indonesia</a></h2>
-                            <ul class="post-tags">
-                                <li><i class="lnr lnr-user"></i>by <a href="#">Helena Doe</a></li>
-                                <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="news-post large-image-post">
-                        <img src="upload/blog/lg3.jpg" alt="">
-                        <div class="hover-box">
-                            <a href="#" class="category category-travel">Travel</a>
-                            <h2><a href="single-post.html">If you visit south Africa take a right map with you</a></h2>
-                            <ul class="post-tags">
-                                <li><i class="lnr lnr-user"></i>by <a href="#">Besim Dauti</a></li>
-                                <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
-
     </div>
-
+    @foreach ($sidebar_articles->take(-6)->all() as $item)
     <div class="item">
         <div class="news-post image-post">
-            <img src="upload/blog/s10.jpg" alt="">
+            <img src="{{ asset($item->photo) }}" alt="{{ $item->name }}">
             <div class="hover-box">
-                <a href="#" class="category category-world">Politic</a>
-                <h2><a href="single-post.html">US Muslims protests against ...</a></h2>
+                @if ($item->subCategory)
+                <a href="#" class="category" style="background: {{ $item->subCategory->color }}">{{ $item->subCategory->name }}</a>
+                @else
+                <a href="#" class="category" style="background: {{ $item->category->color }}">{{ $item->category->name }}</a>
+                @endif
+                <h2><a href="single-post.html">{{ $item->name }} ...</a></h2>
                 <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
+                    <li><i class="lnr lnr-user"></i>Tác giả: <a href="#">{{ $item->user->name }}</a></li>
+                    {{-- <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li> --}}
                 </ul>
             </div>
         </div>
     </div>
-    <div class="item">
-        <div class="news-post image-post">
-            <img src="upload/blog/s2.jpg" alt="">
-            <div class="hover-box">
-                <a href="#" class="category">Business</a>
-                <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="news-post image-post">
-            <img src="upload/blog/s20.jpg" alt="">
-            <div class="hover-box">
-                <a href="#" class="category category-fashion">Fashion</a>
-                <h2><a href="single-post.html">Trending autumn jeans</a></h2>
-                <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="news-post image-post">
-            <img src="upload/blog/s4.jpg" alt="">
-            <div class="hover-box">
-                <a href="#" class="category category-food">Food</a>
-                <h2><a href="single-post.html">Traditional food and Healthy food</a></h2>
-                <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="news-post image-post">
-            <img src="upload/blog/s30.jpg" alt="">
-            <div class="hover-box">
-                <a href="#" class="category category-sport">Sport</a>
-                <h2><a href="single-post.html">Australian Open Semi-Finals</a></h2>
-                <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="news-post image-post">
-            <img src="upload/blog/s38.jpg" alt="">
-            <div class="hover-box">
-                <a href="#" class="category category-tech">Tech</a>
-                <h2><a href="single-post.html">Phantom controller</a></h2>
-                <ul class="post-tags">
-                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 <!-- End wide-news-heading -->
 
-<!-- content-section 
+<!-- content-section
     ================================================== -->
 <section id="content-section">
     <div class="container">
 
         <div class="row">
             <div class="col-lg-8">
-                
+
                 <!-- Posts-block -->
                 <div class="posts-block standard-box">
                     <div class="title-section">
                         <h1>Latest News <i class="lnr lnr-bookmark"></i></h1>
                     </div>
+                    <?php
+                    $latest_news = $latest_articles->take(7);
+                    $more_news = $latest_articles->take(-8);
+                    ?>
+                    @foreach ($latest_news->chunk(2) as $key=>$item)
                     <div class="row">
+                        @foreach ($item as $v)
                         <div class="col-sm-6">
                             <div class="news-post standart-post">
                                 <div class="post-image">
                                     <a href="single-post-2.html">
-                                        <img src="upload/blog/s2.jpg" alt="">
+                                        <img src="{{ asset($v->photo) }}" alt="{{ $v->name }}">
                                     </a>
-                                    <a href="#" class="category category-tech">Tech</a>
+                                    @if ($v->subCategory)
+                                    <a href="#" class="category" style="background: {{ $v->subCategory->color }}">{{ $v->subCategory->name }}</a>
+                                    @else
+                                    <a href="#" class="category" style="background: {{ $v->category->color }}">{{ $v->category->name }}</a>
+                                    @endif
                                 </div>
-                                <h2><a href="single-post.html">New alternatives are more productive</a></h2>
+                                <h2><a href="single-post.html">{{ $v->name }}</a></h2>
                                 <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
+                                    <li><i class="lnr lnr-user"></i>Tác giả: <a href="#">{{ $v->user->name }}</a></li>
+                                    {{-- <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li> --}}
+                                    <li><i class="lnr lnr-eye"></i>{{ $v->views }} Views</li>
                                 </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>{{ $v->sort_content }}</p>
                             </div>
                         </div>
+                        @if ($key == 3)
                         <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s4.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-food">Food</a>
-                                </div>
-                                <h2><a href="single-post.html">Traditional food</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s3.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-world">Lifestyle</a>
-                                </div>
-                                <h2><a href="single-post.html">Hapier Child</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s5.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-food">Food</a>
-                                </div>
-                                <h2><a href="single-post.html">Fruits and Vegetables</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s6.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-world">World</a>
-                                </div>
-                                <h2><a href="single-post.html">United States celebrate</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s8.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-tech">Tech</a>
-                                </div>
-                                <h2><a href="single-post.html">Technology Remote Jobs</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="news-post standart-post">
-                                <div class="post-image">
-                                    <a href="single-post-2.html">
-                                        <img src="upload/blog/s23.jpg" alt="">
-                                    </a>
-                                    <a href="#" class="category category-travel">Travel</a>
-                                </div>
-                                <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                <ul class="post-tags">
-                                    <li><i class="lnr lnr-user"></i>by <a href="#">John Doe</a></li>
-                                    <li><a href="#"><i class="lnr lnr-book"></i><span>23 comments</span></a></li>
-                                    <li><i class="lnr lnr-eye"></i>872 Views</li>
-                                </ul>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>More ...</h2>
+                            <h2>Xem thêm ...</h2>
                             <ul class="list-news">
+                                @foreach ($more_news as $item)
                                 <li>
-                                    <h2><a href="single-post.html">Technology Remote Jobs</a></h2>
+                                    <h2><a href="single-post.html">{{ $item->name }}</a></h2>
                                 </li>
-                                <li>
-                                    <h2><a href="single-post.html">United States celebrate</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">Fruits and Vegetables</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">New alternatives are more productive</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">Fruits and Vegetables</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">Traditional food</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">Hapier Child</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="single-post.html">Travelling is part of our life</a></h2>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
+                        @endif
+                        @endforeach
                     </div>
+                    @endforeach
                 </div>
                 <!-- End Posts-block -->
-                
+
                 <!-- Posts-block -->
                 <div class="posts-block featured-box">
                     <div class="title-section">
@@ -320,7 +119,7 @@
 
                     <div class="owl-wrapper">
                         <div class="owl-carousel" data-num="3">
-                        
+
                             <div class="item">
                                 <div class="news-post standart-post">
                                     <div class="post-image">
@@ -336,7 +135,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="item">
                                 <div class="news-post standart-post">
                                     <div class="post-image">
@@ -352,7 +151,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="item">
                                 <div class="news-post standart-post">
                                     <div class="post-image">
@@ -368,7 +167,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="item">
                                 <div class="news-post standart-post">
                                     <div class="post-image">
@@ -384,7 +183,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="item">
                                 <div class="news-post standart-post">
                                     <div class="post-image">
@@ -403,7 +202,7 @@
 
                         </div>
                     </div>
-                    
+
                 </div>
                 <!-- End Posts-block -->
 
@@ -412,13 +211,13 @@
                     <a href="#"><img src="upload/addsense/620x80grey.jpg" alt=""></a>
                 </div>
                 <!-- End Advertisement -->
-                
+
                 <!-- Posts-block -->
                 <div class="posts-block combined-box">
                     <div class="title-section">
                         <h1>Lifestyle</h1>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="news-post standart-post">
@@ -484,18 +283,18 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
                 <!-- End Posts-block -->
-                
+
                 <!-- Posts-block -->
                 <div class="posts-block articles-box">
                     <div class="title-section">
                         <h1>World News</h1>
                     </div>
-                    
+
                     <div class="news-post article-post">
                         <div class="row">
                             <div class="col-sm-4">
